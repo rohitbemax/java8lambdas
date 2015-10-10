@@ -1,0 +1,15 @@
+package com.rohit;
+
+import java.util.function.IntPredicate;
+import java.util.function.LongUnaryOperator;
+
+public class SimplyTypedFI {
+	
+	public static void main(String args[]) {
+		IntPredicate ip = x -> x > 11;
+		System.out.println(ip.test(9));
+		
+		LongUnaryOperator lup = var -> var + 11;
+		System.out.println("Value: " + lup.applyAsLong(11L));
+	}
+}

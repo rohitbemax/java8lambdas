@@ -1,0 +1,56 @@
+package com.rohit;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class EmployeeTest {
+
+	public static void main(String args[]) {
+		List<Employee> list = generateEmployeeList();
+		printEmployee(list);
+		Collections.sort(list, new Comparator<Employee>() {
+			public int compare(Employee e1, Employee e2) {
+				return e1.getName().compareTo(e2.getName());
+			}
+		});
+		printEmployee(list);
+		
+		//Using Lambda Sort the List
+		list = generateEmployeeList();
+		printEmployee(list);
+		Collections.sort(list, (Employee e1, Employee e2) -> e1.getName().compareTo(e2.getName()));
+		printEmployee(list);
+		
+		//Q: sort the order in reverse using lambda
+		//Q: Build and array of integers and sort using lambda
+		List<Integer> intList = new ArrayList<>();
+		intList.add(99);
+		intList.add(20);
+		intList.add(30);
+		Collections.sort(intList, (i1, i2) -> i1.compareTo(i2));
+		for(Integer i : intList) {
+			System.out.println("Value:" + i);
+		}
+		//intList.forEach(() -> System.out.println("Value: " + i));
+	}
+	
+	public static List<Employee> generateEmployeeList() {
+		List<Employee> list = new ArrayList<>();
+		list.add(new Employee("Rahul", 100, 10));
+		list.add(new Employee("Rishu", 200, 20));
+		list.add(new Employee("Bhavin", 300, 30));
+		
+		return list;
+	}
+	
+	public static void printEmployee(List<Employee> list) {
+		System.out.println("---- Printing Employee List ----");
+		for(Employee e : list) {
+			System.out.println("Name: " + e.getName());
+		}
+	}
+}
+

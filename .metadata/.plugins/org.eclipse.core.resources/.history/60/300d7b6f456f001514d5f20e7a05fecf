@@ -1,0 +1,36 @@
+package com.rohit;
+
+public class MethodReference {
+
+	public static void main(String[] args) {
+		
+		//Anonymous Inner class
+		MyTestInterface iface = new MyTestInterface() {
+
+			@Override
+			public void testInterface() {
+				System.out.println("My test interface");
+				//MyTestClass.myTestMethod();
+			}
+		};
+		
+		iface.testInterface();
+		
+		//Lambda expression
+		MyTestInterface fInt = () -> MyTestClass.myTestMethod();
+		fInt.testInterface();
+		
+		//Method refrence
+		MyTestInterface t2 = MyTestClass::myTestMethod;
+		t2.testInterface();
+		
+		/* Example 2 start */
+		MyTestInterface2 iface2 = (n, i) -> MyTestClass2.myTestMethod(n, i);
+		iface2.simpleTestFunction("rohit", 13);
+		
+		MyTestInterface2 iface3 = MyTestClass2::myTestMethod;
+		iface3.simpleTestFunction(20, 30);
+		
+		/* Example 2 end */
+	}
+}

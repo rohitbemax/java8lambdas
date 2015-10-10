@@ -1,0 +1,17 @@
+package com.rohit;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class GenericStreamFilter {
+
+	public static void main(String[] args) {
+		List<Watch> wList = Watch.generateWatchList();
+		
+		Stream<Watch> tList = wList.stream().filter(watch -> watch.getPrice() > 3000);
+		tList.forEach(watch -> System.out.println(watch.getName() + ", Price: " + watch.getPrice()));
+		
+
+	}
+
+}

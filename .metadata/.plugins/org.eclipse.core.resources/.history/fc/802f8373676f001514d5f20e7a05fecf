@@ -1,0 +1,32 @@
+package com.rohit;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+/*
+Supplier<T> 		() 		-> T get()
+Consumer<T> 		T 		-> void accept()
+BiConsumer<T,U> 	(T,U) 	-> void accept()
+Function<T,R> 		T 		-> R apply()
+BiFunction<T,U,R> 	(T,U) 	-> R apply()
+Predicate<T> 		T 		-> boolean test()
+BiPredicate<T,U> 	(T,U) 	-> boolean test()
+UnaryOperator<T> 	T 		-> T identity()
+BinaryOperator<T> 	(T,T) 	-> T apply()
+*/
+
+public class FunctionalInterfaces {
+
+	public static void main(String[] args) {
+		Supplier<String> s = () -> "Bangalore".toString();
+	    System.out.println("Value of S: " + s.get());
+	    
+	    Supplier<Integer> s2 = () -> "Patna".length();
+	    System.out.println("Length: " + s2.get());
+
+	    Consumer<String> str = x -> System.out.println(x);
+	    str.accept("Hello");
+	    
+	}
+}

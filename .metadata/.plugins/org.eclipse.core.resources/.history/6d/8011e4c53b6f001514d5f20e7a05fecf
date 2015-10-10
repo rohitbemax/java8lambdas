@@ -1,0 +1,10 @@
+package com.rohit;
+
+public class MethodReference {
+
+	public static void main(String[] args) {
+		
+		MyTestInterface fInt = () -> MyTestClass.myTestMethod();
+		fInt.testInterface();
+	}
+}

@@ -1,0 +1,17 @@
+package com.rohit;
+
+public class Car {
+	String model;
+	int price;
+	int horsePower;
+	
+	public Car(String model, int price, int horsePower) {
+		this.model = model;
+		this.price = price;
+		this.horsePower = horsePower;
+	}
+	
+	public String getModel() { return model; }
+	public int getPrice() { return price; }
+	public int getHorsePoswer() { return horsePower; }
+}

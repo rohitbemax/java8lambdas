@@ -1,0 +1,90 @@
+package com.rohit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class PredicateWatchTester {
+
+	public static void main(String[] args) {
+		List<Watch> wList = generateWatchList();
+		
+		List<Watch> tList = findWatchesByManuf(wList, "Fossil");
+		System.out.println("Watch by manufacturer");
+		for(Watch w : tList) {
+			System.out.println("Watch : " + w.getName());
+		}
+		
+		tList = findWatchesByManufAndPrice(wList, "Fossil", 4000);
+		System.out.println("Watch by manufacturer");
+		for(Watch w : tList) {
+			System.out.println("Watch : " + w.getName());
+		}
+		
+		System.out.println("--------------------------------------");
+		//tList = findWatch(wList, watch -> watch.getManufacturer().equals("Fossil"));
+		tList = findWatch(wList, watch -> watch.getManufacturer().equals("Fossil") && watch.getPrice() > 4000);
+		System.out.println("Watch by manufacturer2");
+		for(Watch w : tList) {
+			System.out.println("Watch : " + w.getName());
+		}
+		
+	}
+	
+	public static List<Watch> findWatchesByManuf(List<Watch> list, String manuf) {
+		List<Watch> tList = new ArrayList<>();
+		for(Watch w : list) {
+			if(w.getManufacturer().equals(manuf)) {
+				tList.add(w);
+			}
+		}
+		
+		return tList;
+	}
+	
+	public static List<Watch> findWatchesByPrice(List<Watch> list, int price) {
+		List<Watch> tList = new ArrayList<>();
+		for(Watch w : list) {
+			if(w.getPrice() > price) {
+				tList.add(w);
+			}
+		}
+		
+		return tList;
+	}
+	
+	public static List<Watch> findWatchesByManufAndPrice(List<Watch> list, String manuf, int price) {
+		List<Watch> tList = new ArrayList<>();
+		for(Watch w : list) {
+			if(w.getManufacturer().equals(manuf) && w.getPrice() > price) {
+				tList.add(w);
+			}
+		}
+		
+		return tList;
+	}
+	
+	public static List<Watch> findWatch(List<Watch> wList, Predicate<Watch> predicate) {
+		List<Watch> tList = new ArrayList<>();
+		for(Watch w : wList) {
+			if(predicate.test(w)) {
+				tList.add(w);
+			}
+		}
+		
+		return tList;
+	}
+	
+	//Utility method to create a few watches
+	public static List<Watch> generateWatchList() {
+		List<Watch> list = new ArrayList<>();
+		list.add(new Watch("Coachman", 10000, "Fossil"));
+		list.add(new Watch("Raga", 5000, "Titan"));
+		list.add(new Watch("ProWatch", 3000, "Fastrack"));
+		list.add(new Watch("EcoDrive", 20000, "Citizen"));
+		list.add(new Watch("Chrono", 1000, "Fossil"));
+		list.add(new Watch("Ceramic", 3000, "Fossil"));
+		
+		return list;
+	}
+}

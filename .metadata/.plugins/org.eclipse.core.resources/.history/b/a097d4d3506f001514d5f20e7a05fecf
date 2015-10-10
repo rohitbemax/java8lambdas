@@ -1,0 +1,17 @@
+package com.rohit;
+
+public class MyGenericInterfacetester {
+
+	
+	public static void main(String[] args) {
+		System.out.println("Sum --" );
+	}
+
+	Integer instanceMethodAdd(Integer a, Integer b) {
+		System.out.println("Sum -- " + (a + b));
+		return a + b;
+	}
+	
+	static void checkMyInstance(MyGenericInterf)
+	
+}

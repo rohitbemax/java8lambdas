@@ -1,0 +1,13 @@
+package com.rohit;
+
+public class MyGenericInterfacetester {
+
+	
+	public static void main(String[] args) {
+
+	}
+
+	Integer instanceMethodAdd(Integer a, Integer b) {
+		return a + b;
+	}
+}

@@ -1,0 +1,6 @@
+package com.rohit;
+
+@FunctionalInterface
+public interface Converter {
+	public void convertMessage(String s);
+}

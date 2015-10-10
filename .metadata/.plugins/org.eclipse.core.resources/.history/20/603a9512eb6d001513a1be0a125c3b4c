@@ -1,0 +1,6 @@
+package com.rohit;
+
+@FunctionalInterface
+public interface Printer {
+	public void print(String s);
+}

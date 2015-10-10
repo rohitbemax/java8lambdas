@@ -1,0 +1,12 @@
+package com.rohit;
+
+import java.util.function.IntPredicate;
+
+public class SimplyTypedFI {
+	
+	public static void main(String args[]) {
+		IntPredicate ip = x -> x > 10;
+		System.out.println(ip.test(20));
+		
+	}
+}

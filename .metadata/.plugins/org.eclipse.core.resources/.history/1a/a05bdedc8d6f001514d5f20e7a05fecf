@@ -1,0 +1,29 @@
+package com.rohit;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Car {
+	String model;
+	int price;
+	int horsePower;
+	
+	public Car(String model, int price, int horsePower) {
+		this.model = model;
+		this.price = price;
+		this.horsePower = horsePower;
+	}
+	
+	public String getModel() { return model; }
+	public int getPrice() { return price; }
+	public int getHorsePoswer() { return horsePower; }
+	
+	public static List<Car> generateCarList() {
+		List<Car> carList = new ArrayList<>();
+		carList.add(new Car("Alto", 350000, 800));
+		carList.add(new Car("Swift", 600000, 1500));
+		carList.add(new Car("Zen", 300000, 1000));
+		carList.add(new Car("Dezire", 650000, 1800));
+		return carList;
+	}
+}

@@ -1,0 +1,16 @@
+package com.rohit;
+
+import java.util.function.Supplier;
+
+public class FunctionalInterfaces {
+
+	public static void main(String[] args) {
+		Supplier<String> s = () -> "Bangalore".toString();
+	    System.out.println("Value of S: " + s.get());
+	    
+	    Supplier<Integer> s2 = () -> "Patna".length();
+	    System.out.println("Length: " + s2.get());
+
+	}
+
+}

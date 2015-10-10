@@ -1,0 +1,6 @@
+package com.rohit;
+
+@FunctionalInterface
+public interface GenericFunctionalInterface(T1, A1, A2, R) {
+	R perform(A1 a, A2 b);
+}

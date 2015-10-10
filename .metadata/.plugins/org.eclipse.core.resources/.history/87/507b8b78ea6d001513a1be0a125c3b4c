@@ -1,0 +1,6 @@
+package com.rohit;
+
+@FunctionalInterface
+public class Calculator {
+	public void performArithmetic(int x, int y);
+}

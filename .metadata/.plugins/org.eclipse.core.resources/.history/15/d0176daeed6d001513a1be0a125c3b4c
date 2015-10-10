@@ -1,0 +1,13 @@
+package com.rohit;
+
+public class AnonInner {
+	public static void main(String args[]) {
+		Runnable r = new Runnable() {
+			public void run() {
+				System.out.println("Hello World");
+			}
+		};
+		
+		r.run();
+	}
+}

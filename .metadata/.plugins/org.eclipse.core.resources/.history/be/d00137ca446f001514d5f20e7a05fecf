@@ -1,0 +1,7 @@
+package com.rohit;
+
+public class MyTestClass2 {
+	public static void myTestMethod() {
+		System.out.println("MyTestClass ---> myTestMethod was called");
+	}
+}

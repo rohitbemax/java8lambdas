@@ -1,0 +1,14 @@
+package com.rohit;
+
+@FunctionalInterface
+interface Calculator {
+	int operation(int x, int y);
+}
+
+public class LambdaEx1 {
+
+	public static void main(String args[]) {
+		Runnable r = () -> System.out.println("Hello World");
+		r.run();
+	}
+}

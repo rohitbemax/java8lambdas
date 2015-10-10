@@ -1,0 +1,21 @@
+package com.rohit;
+
+@FunctionalInterface
+interface Calculator {
+	int operation(int x, int y);
+}
+
+public class LambdaEx1 {
+
+	public static void main(String args[]) {
+		
+		Calculator cAdd = (x, y) -> x + y;
+		Calculator cMul = (x, y) -> x * y;
+		
+		System.out.println("Add: " + cAdd.operation(10, 20));
+		System.out.println("Mul: " + cMul.operation(30, 30));
+		
+		Runnable r = () -> System.out.println("Hello World");
+		r.run();
+	}
+}

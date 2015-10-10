@@ -1,0 +1,26 @@
+package com.rohit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class GenericPredicateWatchTester {
+
+	public static void main(String[] args) {
+		List<Watch> wList = Watch.generateWatchList();
+		
+
+	}
+	
+	public static <T> findWatch(List<T> list, Predicate<T> predicate) {
+		List<T> tList = new ArrayList<>();
+		for(T t : list) {
+			if(predicate.test(t)) {
+				tList.add(t);
+			}
+		}
+		
+		return tList;
+	}
+
+}
